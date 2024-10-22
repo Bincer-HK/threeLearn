@@ -24,6 +24,12 @@ const router = createRouter({
                     name: "ThreeJsLearn",
                     component: () => import("@/views/three/begin/indexLearn.vue"),
                     meta: { name: "Threejs 学习" }
+                },
+                {
+                    path: 'liGui',
+                    name: 'ThreeLiGui',
+                    component: () => import('@/views/three/begin/LiGuiDebugger.vue'),
+                    meta: { name: "Three 自带的 LiGui 学习" }
                 }
             ]
         }
