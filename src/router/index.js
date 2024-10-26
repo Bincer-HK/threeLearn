@@ -30,6 +30,12 @@ const router = createRouter({
                     name: 'ThreeLiGui',
                     component: () => import('@/views/three/begin/LiGuiDebugger.vue'),
                     meta: { name: "Three 自带的 LiGui 学习" }
+                },
+                {
+                    path: 'texture',
+                    name: 'TexturePage',
+                    component: () => import('@/views/three/textureMapping/texturePage.vue'),
+                    meta: { name: "学习THREE的贴图，AO贴图等等" }
                 }
             ]
         }
