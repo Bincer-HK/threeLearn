@@ -35,7 +35,13 @@ const router = createRouter({
                     path: 'texture',
                     name: 'TexturePage',
                     component: () => import('@/views/three/textureMapping/texturePage.vue'),
-                    meta: { name: "学习THREE的贴图，AO贴图等等" }
+                    meta: { name: "学习THREE的贴图，AO贴图，环境图等等" }
+                },
+                {
+                    path: 'drawingLines',
+                    name: 'DrawingLines',
+                    component: () => import('@/views/three/lines/drawingLines.vue'),
+                    meta: { name: 'use ThreeJs to draw lines.' }
                 }
             ]
         }
