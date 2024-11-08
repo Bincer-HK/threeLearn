@@ -26,10 +26,16 @@ const router = createRouter({
                     meta: { name: "Threejs 学习" }
                 },
                 {
-                    path: 'liGui',
-                    name: 'ThreeLiGui',
-                    component: () => import('@/views/three/begin/LiGuiDebugger.vue'),
-                    meta: { name: "Three 自带的 LiGui 学习" }
+                    path: 'raycasting',
+                    name: 'Raycasting',
+                    component: () => import('@/views/three/begin/RaycastingPage.vue'),
+                    meta: { name: "Three 的射线投射技术" }
+                },
+                {
+                    path: 'tween',
+                    name: 'TweenPage',
+                    component: () => import('@/views/three/begin/TweenPage.vue'),
+                    meta: { name: 'Three 自带的补间动画学习' }
                 },
                 {
                     path: 'texture',
