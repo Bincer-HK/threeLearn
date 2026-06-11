@@ -10,17 +10,27 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 const initThree = () => {
+
+	// 三剑客：场景、相机、渲染器
+	// 1.创景
 	const scene = new THREE.Scene()
+
+	// 2.相机
 	const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
 
+	// 3.渲染器
 	const renderer = new THREE.WebGLRenderer()
 	renderer.setSize(window.innerWidth, window.innerHeight)
 	document.getElementById('learnThree').appendChild(renderer.domElement)
 
+	// 其他：向场景中增加相关元素
+  // 4.添加一个立方体
 	const geometry = new THREE.BoxGeometry(1, 1, 1)
+	// 5.增加了两种材质
 	const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
 	const parentMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 
+	// 6.添加一个父立方体、子立方体，他们是一样的立方体，但是基础材质不同而已
 	const parentCube = new THREE.Mesh(geometry, parentMaterial)
 	const cube = new THREE.Mesh(geometry, material)
 
@@ -28,11 +38,12 @@ const initThree = () => {
 	parentCube.position.set(-3, 0, 0)
 	cube.position.set(3, 0, 0)
 
-	// 缩放:Vect3, 示例，x,y,z都放大一倍
+	// 缩放:Vect3, 示例，x,y,z都放大一倍，与父元素有关系，会根据父元素的缩放比例再来缩放
 	// parentCube.scale.set(2, 2, 2)
 	// cube.scale.set(2, 2, 2)
 
 	// 旋转:Euler，通过指定轴顺序和其各个指定旋转角度来旋转一个物体
+	// 旋转顺序：x轴、y轴、z轴，先旋转x轴，再旋转y轴，最后旋转z轴，与父元素有关系，会根据父元素的旋转角度再来旋转
 	parentCube.rotation.x = Math.PI / 4
 	cube.rotation.x = Math.PI / 4
 
@@ -42,11 +53,11 @@ const initThree = () => {
 	scene.add(parentCube)
 
 	// 向上抬升一点点，就可以看到 z轴
-	camera.position.set(2, 2, 5)
+	camera.position.set(2, 2, 12)
 	camera.lookAt(0, 0, 0)
 
 	// 添加世界坐标轴辅助器,x轴(水平)：红色，y轴(竖直)：绿色，z轴(朝向我眼睛)：蓝色；
-	const axesHelper = new THREE.AxesHelper(5)
+	const axesHelper = new THREE.AxesHelper(10)
 	scene.add(axesHelper)
 
 	// 可以使用轨道，来调试旋转等

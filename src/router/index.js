@@ -26,6 +26,12 @@ const router = createRouter({
                     meta: { name: "Threejs 学习" }
                 },
                 {
+                    path: 'lil-gui',
+                    name: 'LilGui',
+                    component: () => import('@/views/three/begin/LiGuiDebugger.vue'),
+                    meta: { name: "Threejs 学习 - lil-gui" }
+                },
+                {
                     path: 'raycasting',
                     name: 'Raycasting',
                     component: () => import('@/views/three/begin/RaycastingPage.vue'),

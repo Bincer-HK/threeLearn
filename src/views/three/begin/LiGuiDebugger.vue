@@ -11,6 +11,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js'
 
 const initThree = () => {
+  // 三剑客：场景、相机、渲染器
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
 
@@ -18,6 +19,8 @@ const initThree = () => {
   renderer.setSize(window.innerWidth, window.innerHeight)
   document.getElementById("LiGuiUse").appendChild(renderer.domElement)
 
+  // 其他：向场景中增加相关元素
+  // 1.添加一个立方体
   const geometry = new THREE.BoxGeometry(1, 1, 1)
   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
   // 材质线框图
@@ -31,6 +34,7 @@ const initThree = () => {
   // 增加世界坐标
   const axesHelper = new THREE.AxesHelper(5)
   scene.add(axesHelper)
+  
   // 可以使用轨道，来调试旋转等
 	const controls = new OrbitControls(camera, renderer.domElement)
 	controls.enableDamping = true
