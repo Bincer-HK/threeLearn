@@ -48,6 +48,12 @@ const router = createRouter({
                     name: 'DrawingLines',
                     component: () => import('@/views/three/lines/drawingLines.vue'),
                     meta: { name: 'use ThreeJs to draw lines.' }
+                },
+                {
+                    path: 'animated-sphere',
+                    name: 'AnimatedSphere',
+                    component: () => import('@/views/three/animatedSphere/spherePage.vue'),
+                    meta: { name: 'Animated Sphere with GSAP' }
                 }
             ]
         }

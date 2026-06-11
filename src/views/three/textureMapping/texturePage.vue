@@ -36,7 +36,7 @@ const initThree = () => {
   // // 透明度贴图
   // const alphaTexture = textureLoader.load(alphaImg);
   const planeMaterial = new THREE.MeshBasicMaterial({
-    color: "#ffffff",
+    color: "#87CEEB",
     map: planeTexture,
 
     // 先允许一下，可以使用透明
