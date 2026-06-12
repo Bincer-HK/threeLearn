@@ -24,17 +24,17 @@ const initThree = () => {
 	document.getElementById('learnThree').appendChild(renderer.domElement)
 
 	// 其他：向场景中增加相关元素
-  // 4.添加一个立方体
+  // 4.创建一个立方体几何体形状
 	const geometry = new THREE.BoxGeometry(1, 1, 1)
 	// 5.增加了两种材质
 	const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
 	const parentMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 
-	// 6.添加一个父立方体、子立方体，他们是一样的立方体，但是基础材质不同而已
+	// 6.真实创建一个父立方体、子立方体，他们是一样的立方体，但是基础材质不同而已
 	const parentCube = new THREE.Mesh(geometry, parentMaterial)
 	const cube = new THREE.Mesh(geometry, material)
 
-	// 设置位置
+	// 对真实的物体，设置位置
 	parentCube.position.set(-3, 0, 0)
 	cube.position.set(3, 0, 0)
 

@@ -26,6 +26,12 @@ const router = createRouter({
                     meta: { name: "Threejs 学习" }
                 },
                 {
+                    path: 'geometry',
+                    name: 'GeometryPage',
+                    component: () => import('@/views/three/begin/BufferGeometry.vue'),
+                    meta: { name: "Threejs 学习 - 几何体" }
+                },
+                {
                     path: 'lil-gui',
                     name: 'LilGui',
                     component: () => import('@/views/three/begin/LiGuiDebugger.vue'),
