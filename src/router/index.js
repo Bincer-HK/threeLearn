@@ -66,6 +66,12 @@ const router = createRouter({
                     name: 'AnimatedSphere',
                     component: () => import('@/views/three/animatedSphere/spherePage.vue'),
                     meta: { name: 'Animated Sphere with GSAP' }
+                },
+                {
+                    path: 'light',
+                    name: 'LightPage',
+                    component: () => import('@/views/three/light/lightPage.vue'),
+                    meta: { name: 'Light Page' }
                 }
             ]
         }
